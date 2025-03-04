@@ -65,15 +65,22 @@ screenshot/gui-cloudinit-config.png
 
 You can easily deploy such a template by cloning:
 
+---bash
 qm clone 9005 9006 --name rockylinux
-
+---
 Then configure the SSH public key used for authentication, and configure the IP setup:
 
+---bash
 qm set 123 --sshkey ~/.ssh/id_rsa.pub
 qm set 123 --ipconfig0 ip=10.0.10.123/24,gw=10.0.10.1
+---
 
 You can also configure all the Cloud-Init options using a single command only. We have simply split the above example to separate the commands for reducing the line length. Also make sure to adopt the IP setup for your specific environment.
 
+#### IMPORTANT Documents To Read
+--link
+ https://pve.proxmox.com/wiki/Cloud-Init_Support
+==
 
 ## Next Steps
 - Clone VMs from the template using Terraform or manual cloning.
