@@ -82,6 +82,9 @@ You can also configure all the Cloud-Init options using a single command only. W
 
 
  https://pve.proxmox.com/wiki/Cloud-Init_Support
+ https://docs.rockylinux.org/guides/automation/templates-automation-packer-vsphere/#deployment-part
+ https://www.toad39.dev/posts/202210/rocky-cloud-init
+ https://gist.github.com/zidenis/dfc05d9fa150ae55d7c87d870a0306c5
 =
 ## Next Steps
 - Clone VMs from the template using Terraform or manual cloning.
