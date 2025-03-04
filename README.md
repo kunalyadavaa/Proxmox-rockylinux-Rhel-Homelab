@@ -1,4 +1,4 @@
-# Proxmox-rockylinux-Rhel-Homelab
+# Proxmox-rockylinux-Homelab
 Proxmox-rockylinux (Template) -Rhel-Homelab
 
 # Proxmox Cloud-Init Template Guide
@@ -31,7 +31,7 @@ qm create 9000 --name debian12-cloudinit
 ### 3. Importing the Cloud-Init Image
 Import the downloaded image into the newly created VM:
 ```bash
-qm set 9000 --scsi0 local-lvm:0,import-from=/root/debian-12-genericcloud-amd64.qcow2
+qm set 9000 --scsi0 local-lvm:0,import-from=/root/Rocky-9-GenericCloud-Base.latest.x86_64.qcow2
 ```
 
 ### 4. Creating a Template from the VM
@@ -53,8 +53,8 @@ mkdir /var/lib/vz/snippets
 tee /var/lib/vz/snippets/qemu-guest-agent.yml <<EOF
 #cloud-config
 runcmd:
-  - apt update
-  - apt install -y qemu-guest-agent
+  - dnf update
+  - dnf install -y qemu-guest-agent
   - systemctl start qemu-guest-agent
 EOF
 ```
